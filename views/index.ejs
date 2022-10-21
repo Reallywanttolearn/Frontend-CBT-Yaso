@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT SMK YADIKA SOREANG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body onload="startTime()">
+    <div class="w-[95%] mx-auto">
+
+        <div class="bg-white mt-2">
+            <div class=" py-2 bg-blue-400 drop-shadow-xl mx-auto rounded-xl">
+                <h1 class="text-white font-semibold font-mono pl-2">CBT SMK Yadika Soreang</h1>
+            </div>
+            <div class=" py-[3vh] bg-white mt-1 mx-auto drop-shadow-2xl rounded-xl">
+                <div id="datetime" class=" mt-2 text-2xl text-center text-gray-800 "></div>
+                <div id="txt" class=" text-7xl text-center text-gray-800"></div>
+            </div>
+        </div>
+
+        <!-- Card pilih jurusan-->
+        <%- include('./indexComp/jurusan') %>
+            <!-- end of jurusan-->
+    </div>
+
+    <!--AKUNTANSI-->
+    <%- include('./indexComp/ddakuntansi') %>
+        <!--end of AKUNTANSI-->
+
+        <!--RPl-->
+        <%- include('./indexComp/ddrpl') %>
+            <!--end of RPL-->
+
+            <!--HOTEL-->
+            <%- include('./indexComp/ddhotel') %>
+                <!--end of HOTEL-->
+
+                <script>
+                    function startTime() {
+                        const today = new Date();
+                        let h = today.getHours();
+                        let m = today.getMinutes();
+                        let s = today.getSeconds();
+                        m = checkTime(m);
+                        s = checkTime(s);
+                        document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+                        setTimeout(startTime, 1000);
+                        var dt = new Date();
+                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear());
+                    }
+
+                    function checkTime(i) {
+                        if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+                        return i;
+                    }
+                    var toglak = () => {
+                        document.getElementById('akuntansi').style.display = "block"
+                        document.getElementById('rpl').style.display = "none"
+                        document.getElementById('hotel').style.display = "none"
+                    }
+                    var toglrpl = () => {
+                        document.getElementById('akuntansi').style.display = "none"
+                        document.getElementById('rpl').style.display = "block"
+                        document.getElementById('hotel').style.display = "none"
+                    }
+                    var toglhtl = () => {
+                        document.getElementById('akuntansi').style.display = "none"
+                        document.getElementById('rpl').style.display = "none"
+                        document.getElementById('hotel').style.display = "block"
+                    }
+
+                    const cbt = [
+                        {
+                            jurusan: "RPL",
+                            tingkat: [{
+                                kelas: "10",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            },
+                            {
+                                kelas: "11",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            },
+                            {
+                                kelas: "12",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            }]
+                        },
+                        {
+                            jurusan: "RPL",
+                            tingkat: [{
+                                kelas: "10",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            },
+                            {
+                                kelas: "11",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            },
+                            {
+                                kelas: "12",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            }]
+                        },
+                        {
+                            jurusan: "RPL",
+                            tingkat: [{
+                                kelas: "10",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            },
+                            {
+                                kelas: "11",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            },
+                            {
+                                kelas: "12",
+                                mapel: [
+                                    {
+                                        mtk: "ms365"
+                                    },
+                                    {
+                                        bindo: "ms345"
+                                    },
+                                    {
+                                        binggris: "ms375"
+                                    }
+                                ]
+                            }]
+                        }
+                    ]
+                </script>
+
+
+</body>
+
+</html>
